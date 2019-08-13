@@ -23,10 +23,7 @@ class Map extends React.Component {
   constructor(props) {
     super(props);
     this.mapRef = React.createRef();
-
   }
-
-  activeTrip = this.props;
 
   componentDidMount() {
     try {
@@ -35,9 +32,8 @@ class Map extends React.Component {
       }
       this._init();
     } catch (err) {
-      return true;
+      return false;
     }
-
     return true;
   }
 
@@ -48,7 +44,7 @@ class Map extends React.Component {
       }
       this._init(activeTrip);
     } catch (err) {
-      return true;
+      return false;
     }
 
     return true;
@@ -58,7 +54,6 @@ class Map extends React.Component {
     if (mapMain) {
       mapMain.remove();
     }
-
     this._init(activeTrip);
     return true;
   }

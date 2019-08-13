@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as leaflet from 'leaflet';
+import PropTypes from 'prop-types';
 import './style.scss';
 import {connect} from 'react-redux';
 import {getActiveTrip} from '../../reducer/user/selectors';
@@ -135,6 +136,36 @@ class Map extends React.Component {
     </section>;
   }
 
+}
+
+Map.propTypes = {
+  activeTrip: PropTypes.shape({
+    tripduration: PropTypes.number,
+    starttime: PropTypes.string,
+    stoptime: PropTypes.string,
+    startStationName: PropTypes.string,
+    startStationLatitude: PropTypes.number,
+    startStationLongitude: PropTypes.number,
+    endStationName: PropTypes.string,
+    endStationLatitude: PropTypes.number,
+    endStationLongitude: PropTypes.number,
+    bikeid: PropTypes.number,
+  }),
+
+  tripList: PropTypes.arrayOf(
+    PropTypes.shape({
+      tripduration: PropTypes.number,
+      starttime: PropTypes.string,
+      stoptime: PropTypes.string,
+      startStationName: PropTypes.string,
+      startStationLatitude: PropTypes.number,
+      startStationLongitude: PropTypes.number,
+      endStationName: PropTypes.string,
+      endStationLatitude: PropTypes.number,
+      endStationLongitude: PropTypes.number,
+      bikeid: PropTypes.number,
+    })
+  ),
 }
 
 export {Map};

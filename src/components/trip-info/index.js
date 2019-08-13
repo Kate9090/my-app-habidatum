@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
 import {ActionCreator} from '../../reducer/user/user';
@@ -20,6 +21,22 @@ const TripInfo = (props) =>  {
       <li className="finish-color">Конечная точка поездки: {data.endStationLatitude}, {data.endStationLongitude}</li>
     </ul>
   </div>;
+}
+
+TripInfo.propTypes = {
+  data: PropTypes.shape({
+    tripduration: PropTypes.number,
+    starttime: PropTypes.string,
+    stoptime: PropTypes.string,
+    startStationName: PropTypes.string,
+    startStationLatitude: PropTypes.number,
+    startStationLongitude: PropTypes.number,
+    endStationName: PropTypes.string,
+    endStationLatitude: PropTypes.number,
+    endStationLongitude: PropTypes.number,
+    bikeid: PropTypes.number,
+  }),
+  onTripClick: PropTypes.func,
 }
 
 export {TripInfo};

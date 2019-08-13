@@ -1,5 +1,7 @@
+import dataTrip from '../../mock/trip-data';
+
 const initialState = {
-  data: [{}],
+  dataTripList: dataTrip,
 };
 
 const ActionCreator = ({

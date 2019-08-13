@@ -4,6 +4,6 @@ import {reducer as user} from "./user/user";
 import NameSpace from "./name-spaces";
 
 export default combineReducers({
-  [NameSpace.USER]: data,
+  [NameSpace.DATA]: data,
   [NameSpace.USER]: user,
 });

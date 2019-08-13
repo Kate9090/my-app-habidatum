@@ -3,6 +3,7 @@ import * as leaflet from 'leaflet';
 import './style.scss';
 import {connect} from 'react-redux';
 import {getActiveTrip} from '../../reducer/user/selectors';
+import {getActiveData} from '../../reducer/data/selectors';
 
 const icon = leaflet.icon({
   iconUrl: `/img/pin.svg`,
@@ -140,6 +141,7 @@ export {Map};
 
 const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, {
   activeTrip: getActiveTrip(state),
+  tripList: getActiveData(state),
 });
 
 export default connect(

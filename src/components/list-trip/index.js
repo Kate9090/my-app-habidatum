@@ -1,5 +1,7 @@
 import React from 'react';
 import TripInfo from '../../components/trip-info'
+import {connect} from 'react-redux';
+import {getActiveData} from '../../reducer/data/selectors';
 
 import './style.scss'
 
@@ -15,4 +17,12 @@ const ListTrip = (props) =>  {
   </div>;
 }
 
-export default ListTrip;
+export {ListTrip};
+
+const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, {
+  dataTrip: getActiveData(state),
+});
+
+export default connect(
+  mapStateToProps
+)(ListTrip);

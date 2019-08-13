@@ -1,17 +1,16 @@
 import React from 'react';
-import dataTrip from './mock/trip-data';
+// import dataTrip from './mock/trip-data';
 import ListTrip from './components/list-trip';
 import Map from './components/map';
 import './App.css';
 
 const App = () => {
 
-  const data = dataTrip;
+  // const data = dataTrip;
   return (
     <div className="App">
-      <ListTrip dataTrip={data} />
-      <Map tripList={data}
-       />
+      <ListTrip />
+      <Map />
     </div>
   );
 }

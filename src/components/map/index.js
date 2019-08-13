@@ -50,18 +50,18 @@ class Map extends React.Component {
     return true;
   }
 
-  shouldComponentUpdate(activeTrip) {
-    if (mapMain) {
-      mapMain.remove();
-    }
-    this._init(activeTrip);
-    return true;
-  }
+  // shouldComponentUpdate(activeTrip) {
+  //   if (mapMain) {
+  //     mapMain.remove();
+  //   }
+  //   this._init(activeTrip);
+  //   return true;
+  // }
 
   _init() {
     const {tripList, activeTrip} = this.props;
 
-    console.log(`in map ` + activeTrip.tripduration)
+    // console.log(`in map ` + activeTrip.tripduration)
     if (this.mapRef.current) {
 
       const zooms = map.ZOOM;
